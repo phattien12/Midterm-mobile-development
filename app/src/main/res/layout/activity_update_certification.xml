@@ -1,0 +1,179 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:paddingHorizontal="20dp"
+    android:paddingVertical="15dp"
+    android:layout_height="match_parent"
+    android:background="@color/primary_color"
+    tools:context=".UpdateCertificationActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    android:id="@+id/returnButton"
+                    android:background="@android:color/transparent"
+                    android:layout_gravity="start"
+                    android:src="@drawable/baseline_chevron_left_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:tint="@color/white" />
+
+                <TextView
+                    android:layout_gravity="center"
+                    android:textStyle="bold"
+                    android:textSize="20sp"
+                    android:textColor="@color/white"
+                    android:textAllCaps="true"
+                    android:text="@string/update_certification"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+            </FrameLayout>
+
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/certificateName"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/certificationNameTextInput"
+                android:theme="@style/TextLabel"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="text"
+                    android:hint="@string/certificateName"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/certificateNameEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="Detail"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/certificationDetailTextInput"
+                android:theme="@style/TextLabel"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="textEmailAddress"
+                    android:hint="Detail"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/certificateDetailEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/activated"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:id="@+id/activateRadio"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_button"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:textStyle="bold"
+                    android:paddingVertical="10dp"
+                    android:id="@+id/deactivatedCheck"
+                    android:background="@color/radio_selector"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/deactivated"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:textStyle="bold"
+                    android:paddingVertical="10dp"
+                    android:id="@+id/activatedCheck"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/activated"
+                    android:textColor="@color/white" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submitBtn"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="@string/submit"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/fill_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/primary_color"
+            android:visibility="gone"
+            android:id="@+id/blurred_background"
+            android:alpha="0.5" />
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/loadingIndicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+</ScrollView>

@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:paddingVertical="15dp"
+    android:paddingHorizontal="20dp"
+    android:layout_width="match_parent"
+    android:background="@color/primary_color"
+    android:layout_height="match_parent"
+    tools:context=".AddStudentActivity">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <ImageButton
+                    app:tint="@color/white"
+                    android:layout_gravity="start"
+                    android:id="@+id/returnButtonUser"
+                    android:background="@android:color/transparent"
+                    android:src="@drawable/baseline_chevron_left_24"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <TextView
+                    android:textStyle="bold"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:textAllCaps="true"
+                    android:layout_gravity="center"
+                    android:text="@string/add_student"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+            </FrameLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/username"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/usernameUserTextInput"
+                android:theme="@style/TextLabel"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="text"
+                    android:hint="@string/username"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/usernameUserEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="Email"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:id="@+id/emailUserTextInput"
+                android:theme="@style/TextLabel"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="textEmailAddress"
+                    android:hint="Email"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/emailUserEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/age"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:theme="@style/TextLabel"
+                android:id="@+id/ageUserTextInput"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="number"
+                    android:hint="@string/age"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/ageUserEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/fullname"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:theme="@style/TextLabel"
+                android:id="@+id/fullNameUserTextInput"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="textPersonName"
+                    android:hint="@string/fullname"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/fullNameUserEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/phoneNum"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:theme="@style/TextLabel"
+                android:id="@+id/phoneNumUserTextInput"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="phone"
+                    android:hint="@string/phoneNum"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/phoneNumUserTxt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/password"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:theme="@style/TextLabel"
+                android:id="@+id/passwordUserTextInput"
+                android:layout_height="wrap_content">
+
+                <EditText
+                    android:inputType="text"
+                    android:hint="@string/password"
+                    android:paddingVertical="10dp"
+                    android:paddingHorizontal="5dp"
+                    android:textColor="@color/white"
+                    android:textSize="20sp"
+                    android:id="@+id/passwordUserEdt"
+                    android:backgroundTint="@color/secondary_color"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <TextView
+                android:textAllCaps="true"
+                android:textStyle="bold"
+                android:textSize="16sp"
+                android:textColor="@color/white"
+                android:text="@string/activated"
+                android:layout_marginTop="10dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <RadioGroup
+                android:layout_marginTop="10dp"
+                android:id="@+id/activateRadioUser"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/border_button"
+                android:orientation="horizontal">
+
+                <RadioButton
+                    android:textStyle="bold"
+                    android:paddingVertical="10dp"
+                    android:id="@+id/deactivatedCheckUser"
+                    android:background="@color/radio_selector"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/deactivated"
+                    android:textColor="@color/white" />
+
+                <RadioButton
+                    android:textStyle="bold"
+                    android:paddingVertical="10dp"
+                    android:id="@+id/activatedCheckUser"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:background="@color/radio_selector"
+                    android:button="@null"
+                    android:gravity="center"
+                    android:text="@string/activated"
+                    android:textColor="@color/white" />
+            </RadioGroup>
+
+            <Button
+                android:id="@+id/submitBtnUser"
+                android:textSize="20sp"
+                android:textColor="@color/white"
+                android:text="@string/submit"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/fill_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </LinearLayout>
+
+        <ProgressBar
+            android:visibility="gone"
+            android:layout_gravity="center"
+            android:id="@+id/loadingIndicatorUser"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+    </FrameLayout>
+</ScrollView>

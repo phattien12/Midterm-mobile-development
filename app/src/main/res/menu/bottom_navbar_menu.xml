@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/homeTab" android:title="@string/home" android:icon="@drawable/baseline_home_24"/>
+    <item android:id="@+id/systemUsersTab" android:icon="@drawable/baseline_person_pin_24" android:title="@string/system_users"/>
+    <item android:id="@+id/userProfileTab" android:icon="@drawable/baseline_person_24" android:title="@string/profile"/>
+</menu>

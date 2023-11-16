@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="TextLabel" parent="Theme.AppCompat.DayNight.NoActionBar">
+        <!-- Hint color and label color in FALSE state -->
+        <item name="android:textColorHint">@color/quaternary_color</item>
+        <!-- Label color in TRUE state and bar color FALSE and TRUE State -->
+        <item name="colorAccent">@color/tertiary_color</item>
+        <item name="colorControlNormal">@color/quaternary_color</item>
+        <item name="colorControlActivated">@color/quaternary_color</item>
+    </style>
+
+    <style name="circle">
+        <item name="cornerSize">50%</item>
+    </style>
+
+</resources>
