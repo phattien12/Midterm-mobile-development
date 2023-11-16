@@ -41,7 +41,16 @@
             android:name=".AddCertificationActivity"
             android:exported="false" />
         <activity
+            android:name=".AddUserCertificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".UpdateCertificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".UpdateUserCertificationActivity"
+            android:exported="false" />
+        <activity
+            android:name=".SystemUserCertificationsActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

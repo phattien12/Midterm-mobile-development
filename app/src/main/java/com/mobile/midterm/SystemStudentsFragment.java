@@ -172,7 +172,7 @@ public class SystemStudentsFragment extends Fragment implements OnRecyclerViewIt
                 });
             }
         });
-        
+
         homeDataViewModel.getStudentsList().observe(getViewLifecycleOwner(), list -> {
             binding.progressBar.setVisibility(View.VISIBLE);
             adapter.setUsers(list);
@@ -183,8 +183,9 @@ public class SystemStudentsFragment extends Fragment implements OnRecyclerViewIt
 
     @Override
     public void onItemClickListener(User position) {
-        Intent intent = new Intent(requireActivity(), UpdateStudentActivity.class);
+        Intent intent = new Intent(requireActivity(), SystemUserCertificationsActivity.class);
         intent.putExtra("student", position);
         startActivity(intent);
     }
+    
 }

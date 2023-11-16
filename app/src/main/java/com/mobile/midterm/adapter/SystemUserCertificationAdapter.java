@@ -38,6 +38,7 @@ public class SystemUserCertificationAdapter extends RecyclerView.Adapter<SystemU
         notifyDataSetChanged();
     }
 
+
     public void setUser(User user) {
         this.user = user;
         notifyDataSetChanged();
@@ -61,7 +62,7 @@ public class SystemUserCertificationAdapter extends RecyclerView.Adapter<SystemU
         holder.imageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                onRecyclerViewItemCertificationClickListener.onItemClickListener(certification);
+                onRecyclerViewItemCertificationClickListener.onItemClickListenerImage(user);
             }
         });
         holder.layout.setOnClickListener(new View.OnClickListener() {

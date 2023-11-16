@@ -19,6 +19,7 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationView;
 import com.google.gson.Gson;
 import com.mobile.midterm.dao.CertificationDAO;
+import com.mobile.midterm.dao.UserCertificationDAO;
 import com.mobile.midterm.dao.UserDAO;
 import com.mobile.midterm.databinding.ActivityManagerHomeBinding;
 import com.mobile.midterm.model.User;
@@ -36,6 +37,7 @@ public class ManagerHomeActivity extends AppCompatActivity implements OnSelected
     private SharedPreferences sharedPreferences;
     private UserDAO userDAO = UserDAO.getInstance();
     private CertificationDAO certificationDAO = CertificationDAO.getInstance();
+    private UserCertificationDAO userCertificationDAO = UserCertificationDAO.getInstance();
     private Fragment managerHomeFragment = new ManagerHomeFragment();
     private Fragment systemStudentFragment = new SystemStudentsFragment();
     private Fragment systemCertificationsFragment = new SystemCertificationsFragment();
@@ -112,7 +114,8 @@ public class ManagerHomeActivity extends AppCompatActivity implements OnSelected
         binding.fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
+                Intent addStudentScreen = new Intent(ManagerHomeActivity.this, AddStudentActivity.class);
+                startActivity(addStudentScreen);
             }
         });
     }
@@ -136,6 +139,17 @@ public class ManagerHomeActivity extends AppCompatActivity implements OnSelected
         });
         certificationDAO.getAllCertification().thenAcceptAsync(t -> {
             homeDataViewModel.setCertificationList(new ArrayList<>(t));
+        }).exceptionally((t) -> {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Utils.showSnackBar(binding.getRoot(), t.getMessage());
+                }
+            });
+            return null;
+        });
+        userCertificationDAO.getAllUserCertification().thenAcceptAsync(t -> {
+            homeDataViewModel.setUserCertificationList(new ArrayList<>(t));
         }).exceptionally((t) -> {
             runOnUiThread(new Runnable() {
                 @Override
@@ -183,6 +197,17 @@ public class ManagerHomeActivity extends AppCompatActivity implements OnSelected
         });
         certificationDAO.getAllCertification().thenAcceptAsync(t -> {
             homeDataViewModel.setCertificationList(new ArrayList<>(t));
+        }).exceptionally((t) -> {
+            runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    Utils.showSnackBar(binding.getRoot(), t.getMessage());
+                }
+            });
+            return null;
+        });
+        userCertificationDAO.getAllUserCertification().thenAcceptAsync(t -> {
+            homeDataViewModel.setUserCertificationList(new ArrayList<>(t));
         }).exceptionally((t) -> {
             runOnUiThread(new Runnable() {
                 @Override

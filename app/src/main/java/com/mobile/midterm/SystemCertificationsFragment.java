@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import com.mobile.midterm.adapter.SystemCertificationAdapter;
 import com.mobile.midterm.databinding.FragmentSystemCertificationsBinding;
 import com.mobile.midterm.model.Certification;
+import com.mobile.midterm.model.User;
 import com.mobile.midterm.utils.OnRecyclerViewItemCertificationClickListener;
 import com.mobile.midterm.viewmodel.HomeDataViewModel;
 
@@ -98,5 +99,10 @@ public class SystemCertificationsFragment extends Fragment implements OnRecycler
         Intent intent = new Intent(requireActivity(), UpdateCertificationActivity.class);
         intent.putExtra("certification", position);
         startActivity(intent);
+    }
+
+    @Override
+    public void onItemClickListenerImage(User user) {
+
     }
 }

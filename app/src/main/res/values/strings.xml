@@ -67,4 +67,10 @@
     <string name="update_certification_success">Update Certification Success</string>
     <string name="update_certification_failed">Update Certification Failed</string>
     <string name="add_user_fail">Add Student Failed</string>
+    <string name="certification">CERTIFICATION</string>
+    <string name="add_user_certification">ADD CERTIFICATION FOR USER</string>
+    <string name="add_user_certification_fail">ADD CERTIFICATION FOR USER FAILED</string>
+    <string name="add_user_certification_success">ADD CERTIFICATION FOR USER SUCCESS</string>
+    <string name="update_user_certification_success">Update Certification for User Success</string>
+    <string name="update_user_certification_failed">Update Certification for User Failed</string>
 </resources>

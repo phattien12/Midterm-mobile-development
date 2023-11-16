@@ -1,5 +1,6 @@
 package com.mobile.midterm.dao;
 
+import com.google.firebase.firestore.FieldPath;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.google.firebase.firestore.QueryDocumentSnapshot;
 import com.google.firebase.storage.FirebaseStorage;
@@ -83,27 +84,27 @@ public class CertificationDAO {
 
     public CompletableFuture<List<Certification>> getCertificationByIds(List<String> ids) {
         CompletableFuture<List<Certification>> completableFuture = new CompletableFuture<>();
-
-        firestore.collection(Certification.class.getSimpleName().toLowerCase())
-                .whereIn("id", ids)
-                .get()
-                .addOnCompleteListener(
-                        task -> {
-                            if (task.isSuccessful()) {
-                                ArrayList<Certification> result = new ArrayList<>();
-                                for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
-                                    Certification user = documentSnapshot.toObject(Certification.class);
-                                    user.setId(documentSnapshot.getId());
-                                    result.add(user);
+        if (!ids.isEmpty())
+            firestore.collection(Certification.class.getSimpleName().toLowerCase())
+                    .whereIn(FieldPath.documentId(), ids)
+                    .get()
+                    .addOnCompleteListener(
+                            task -> {
+                                if (task.isSuccessful()) {
+                                    ArrayList<Certification> result = new ArrayList<>();
+                                    for (QueryDocumentSnapshot documentSnapshot : task.getResult()) {
+                                        Certification user = documentSnapshot.toObject(Certification.class);
+                                        user.setId(documentSnapshot.getId());
+                                        result.add(user);
+                                    }
+                                    completableFuture.complete(result);
+                                } else {
+                                    completableFuture.completeExceptionally(task.getException());
                                 }
-                                completableFuture.complete(result);
-                            } else {
-                                completableFuture.completeExceptionally(task.getException());
                             }
-                        }
-                ).addOnFailureListener(
-                        completableFuture::completeExceptionally
-                );
+                    ).addOnFailureListener(
+                            completableFuture::completeExceptionally
+                    );
         return completableFuture;
     }
 
